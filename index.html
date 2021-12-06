@@ -1,51 +1,544 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+    <title>reveal.js</title>
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section data-auto-animate>
-                    
-                    <h2>Pré-processamento de sinal de um\\ fotopletismógrafo de baixo custo</h2>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/white.css">
 
-                    <h3>Danilo Souza Lima</h3>
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+    <style>
+        .container {
+            display: flex;
+            margin-bottom: 10px;
+        }
+
+        .col {
+            flex: 0 0 500px;
+            text-align: left;
+        }
+
+        .col2 {
+            flex: 1;
+            margin-left: 0px;
+            text-align: left;
+        }
+
+        .center {
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+
+                <a>
+                    <img src='./assets/imgs/ufscar.jpg' alt="reveal.js logo"
+                        style="height: 250px; margin: 0 auto 0 auto; background: transparent;" class="demo-logo">
+                </a>
+                <h3>Pré-processamento do sinal de um fotopletismógrafo de baixo custo</h3>
+
+
+                <img src='./assets/imgs/logoDEE.png' alt="reveal.js"
+                    style="height: 100px; margin: 0 auto 0 auto; background: transparent;" class="demo-logo">
+
+                <p>
+                    <small>Danilo Souza Lima</small>
+                </p>
+
+            </section>
+
+            <!-- <section>
+
+                <h2>Sobre a apresentação</h2>
+
+
+                <div class="container">
+                    <div class="col">
+                        <p class="fragment highlight-red"> Introdução </p>
+                    </div>
+                    <div class="col2">
+                        <ul>
+                            <li class="fragment fade-in-then-semi-out">Fotopletismógrafo</li>
+                            <li class="fragment fade-in-then-semi-out">Sinal PPG</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="col">
+                        <p class="fragment highlight-red"> Formulação do problema </p>
+                    </div>
+                    <div class="col2">
+                        <ul>
+                            <li class="fragment fade-in-then-semi-out">Justificativas</li>
+                            <li class="fragment fade-in-then-semi-out">Objetivos</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="container">
+                    <div class="col">
+                        <p class="fragment highlight-red"> Materiais e métodos </p>
+                    </div>
+                    <div class="col2">
+                        <ul>
+                            <li class="fragment fade-in-then-semi-out">Hardware desenvolvido</li>
+                            <li class="fragment fade-in-then-semi-out">Software desenvolvido</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="container">
+                    <div class="col">
+                        <p class="fragment highlight-red"> Resultados </p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="col">
+                        <p class="fragment highlight-red"> Conclusão </p>
+                    </div>
+                    <div class="col2">
+                    </div>
+                </div>
+            </section> -->
+
+            <section>
+
+                <section>
+
+                    <h2>Introdução</h2>
 
                 </section>
-                
-				<section data-auto-animate>
-                    
-                    <h2>Pré-processamento de sinal de um\\ <b>fotopletismógrafo</b> de baixo custo</h2>
-                    
+
+                <section>
+
+                    <h3>Fotopletismógrafo</h3>
+
+                    <p class=""> Ex. Saturímetro </p>
+
+                    <div class="container">
+                        <div class="col center fragment fade-in">
+                            <img src='./assets/imgs/paper/oxipulse.png' alt="reveal.js"
+                                style="height: 300px; margin: 0 auto 0 auto; background: transparent;">
+                        </div>
+                        <div class="col center fragment fade-in">
+                            <img src='./assets/imgs/paper/oxifinger.png' alt="reveal.js"
+                                style="height: 300px; margin: 0 auto 0 auto; background: transparent;">
+                        </div>
+                    </div>
+
+                    <aside class="notes">
+                        Exemplo mais comum de fotopletismofrado📝
+                    </aside>
+
                 </section>
-			</div>
-		</div>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+                <section>
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+                    <h3>Funcionamento</h3>
+                    <div class="center">
+                        <img src='./assets/imgs/paper/ppg.png' alt="reveal.js"
+                            style="height: 100%; margin: 0 auto 0 auto; background: transparent;">
+                    </div>
+
+                    <aside class="notes">
+                        Mede indiretamente a variação do volume de sangue nos vasos perféricos no tecido vascular
+                        A medição é feita de forma ótica com um emissor e um receptor
+                        Pode ser feita por trânsmissão ou reflexão
+                    </aside>
+                </section>
+
+
+                <section>
+
+                    <h3>Sinal do PPG</h3>
+
+                    <div class="col center fragment fade-in">
+                        <img src='./assets/imgs/paper/ppgwave.png' alt="reveal.js"
+                            style="height: 100%; margin: 0 auto 0 auto; background: transparent;">
+                    </div>
+
+                    <aside class="notes">
+                        Sinal de referencia de um pletismografo, não necessáriamente ótico
+
+                        Caracteristicas podem ser vistas
+                    </aside>
+
+                </section>
+
+                <section>
+
+                    <h3>Características do Sinal PPG</h3>
+
+                    <div class="col center fragment fade-in">
+                        <img src='./assets/imgs/paper/ppgchar.png' alt="reveal.js"
+                            style="height: 300px; margin: 0 auto 0 auto; background: transparent;">
+                    </div>
+
+
+                    <aside class="notes">
+                        Ponto diacroico
+                        Indica período de fim da sistole e inicio da diastole
+                    </aside>
+
+                </section>
+
+            </section>
+
+
+            <section>
+
+
+                <section> 
+
+                    <h2>Formulação do problema</h2>
+
+                </section>
+
+                <section>
+
+                    <h2>Justificativas do trabalho</h2>
+
+                    <ul>
+                        <li class="fragment fade-in-then-semi-out">
+                            <p>Ruídos inerentes ao funcionamento</p>
+                            <ul>
+                                <li class="fragment fade-in-then-semi-out">
+                                    Ruídos eletromagnéticos
+                                </li>
+                                <li class="fragment fade-in-then-semi-out">
+                                    Respiração
+                                </li>
+                                <li class="fragment fade-in-then-semi-out">
+                                    Fototipo
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="fragment fade-in-then-semi-out">
+                            <p>Outros fatores:</p>
+                            <ul>
+                                <li class="fragment fade-in-then-semi-out">
+                                    Deve ser um equipamento de baixo custo
+                                </li>
+                                <li class="fragment fade-in-then-semi-out">
+                                    Pode ser utilizado por não profissionais
+                                </li>
+                                <li class="fragment fade-in-then-semi-out">
+                                    Pode ser utilizado em ambientes não controlados
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </section>
+
+
+                <section>
+
+                    <h2 style="">Objetivos</h2>
+
+                    <ul>
+                        <li class="fragment fade-in-then-semi-out">Tratar o sinal de forma a possibilitar a extração de
+                            características como:
+                            <ul>
+                                <li class="fragment fade-in-then-semi-out">
+                                    Pulsação
+                                </li>
+                                <li class="fragment fade-in-then-semi-out">
+                                    Ponto diacróico
+                                </li>
+                                <li class="fragment fade-in-then-semi-out">
+                                    Período de sístole e diástole
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="fragment fade-in-then-semi-out">Testar diferentes formas de tratamento do sinal</li>
+                        <li class="fragment fade-in-then-semi-out">Executar tratamento do sinal online </li>
+                        <li class="fragment fade-in-then-semi-out">Executar tratamento do sinal offline </li>
+                    </ul>
+
+                    <aside class="notes">
+                        não é objetivo extrair caracteristicas
+                    </aside>
+
+                </section>
+
+            </section>
+
+            <section>
+
+
+                <section>
+
+                    <h2>Materiais e métodos</h2>
+
+                </section>
+
+                <section data-auto-animate>
+
+                    <h2>Hardware Implementado</h2>
+
+                    <div class="container">
+                        <div class="col center fragment fade-in">
+                            <img src='./assets/imgs/paper/max30102.png' alt="reveal.js"
+                                style="height: 300px; margin: 0 auto 0 auto; background: transparent;">
+                        </div>
+                        <div class="col center fragment fade-in">
+                            <img src='./assets/imgs/paper/nina.png' alt="reveal.js"
+                                style="height: 300px; margin: 0 auto 0 auto; background: transparent;">
+                        </div>
+                    </div>
+
+                    <aside class="notes">
+                        MAX30100 - Low cost
+                        NINA B1 - Bluetooth - robusto continuidade garantida
+                    </aside>
+
+                </section>
+
+                <section data-auto-animate>
+
+                    <h2>Hardware Implementado</h2>
+
+                    <div class="container">
+                        <img src='./assets/imgs/paper/hard.jpg' alt="reveal.js"
+                            style="height: 400px; margin: 0 auto 0 auto; background: transparent;">
+                    </div>
+
+                </section>
+
+                <section data-auto-animate>
+
+                    <h2>Hardware Implementado</h2>
+
+                    <div class="container">
+                        <img src='./assets/imgs/paper/IMG_20211202_154845.jpg' alt="reveal.js"
+                            style="height: 400px; margin: 0 auto 0 auto; background: transparent;">
+
+                    </div>
+
+                </section>
+
+                <section>
+
+                    <h2>Sinal sem tratamento</h2>
+
+                    <div class="container">
+                        <img src='./assets/imgs/paper/raw.png' alt="reveal.js"
+                            style="height: 500px; margin: 0 auto 0 auto; background: transparent;">
+
+                    </div>
+
+                    <aside class="notes">
+                        Ruidos de alta frequencia
+                        Nivel DC
+                        Ruido de baixa frequência
+
+                    </aside>
+
+                </section>
+
+                <section>
+
+                    <h2>Magnitude do sinal</h2>
+
+                    <div class="container">
+                        <img src='./assets/imgs/paper/fft.png' alt="reveal.js"
+                            style="height: 500px; margin: 0 auto 0 auto; background: transparent;">
+
+                    </div>
+
+                    <aside class="notes">
+                        Componenente principal, menos de 1HZ, em torno de .9Hz
+
+                    </aside>
+
+                </section>
+
+                <section>
+
+                    <h2>Software Implementado</h2>
+
+                    <pre data-id="code-animation"><code data-trim data-line-numbers="|6|10|14,16|22-24|26-28|30-32"><script type="text/template">
+                            clear all;
+                            close all;
+
+                            run("data.m") % leitura dos dados
+ 
+                            fs = 100; % frequência de amostragem
+
+                            t = (0:length(red_raw)-1)/fs
+
+                            red_raw = - red_raw % inverte sinal
+
+                            fn = fs/2;
+
+                            fc_fir = [.5 10]; % frequências de corte
+
+                            fc_iir = [.5 10]; % frequências de corte
+
+                            wc_fir = fc_fir/fn;
+
+                            wc_iir = fc_iir/fn;
+
+                            FIR_ORDER = 500; % Ordem do filtro FIR
+
+                            IIR_ORDER = 5; % Ordem do filtros IIR
+
+                            filter_fir = fir1(FIR_ORDER, wc_fir, 'bandpass');
+
+                            [B,A] = butter(IIR_ORDER, wc_iir, 'bandpass')
+
+                            red_filtered_fir = filter(filter_fir,1,red_raw);
+
+                            red_filtered_iir = filter(B,A,red_raw);
+
+                            figure
+
+                            plot(t, red_filtered_fir)
+
+                            grid()
+
+                            figure
+
+                            plot(t, red_filtered_iir)
+
+                            grid()
+
+                        </script></code></pre>
+
+                </section>
+
+            </section>
+
+            <section>
+
+
+                <section>
+
+                    <h2>Resultados</h2>
+
+                </section>
+
+                <section>
+
+                    <h2>Filtro FIR</h2>
+
+                    <div class="container">
+                        <img src='./assets/imgs/paper/fir.png' alt="reveal.js"
+                            style="height: 500px; margin: 0 auto 0 auto; background: transparent;">
+
+                    </div>
+
+                    <aside class="notes">
+                        Sinal bem próximo a referência
+                        Pode-se ver os ponto diacrioco
+                        Diferenciaçao em sistole e diástole
+                        Forma de onda no pico aparece em alguns sinal na literatura
+                        
+                    </aside>
+
+                </section>
+
+                <section>
+
+                    <h2>Filtro IIR</h2>
+
+                    <div class="container">
+                        <img src='./assets/imgs/paper/iir.png' alt="reveal.js"
+                            style="height: 500px; margin: 0 auto 0 auto; background: transparent;">
+
+                    </div>
+                    <aside class="notes">
+                        Deformação do sinal
+                        Pode ser utilizado para analisar frequencia cardiaca
+                        
+                    </aside>
+
+                </section>
+
+            </section>
+
+
+            <section>
+
+
+                <section>
+
+                    <h2>Conclusão</h2>
+
+                </section>
+
+                <section>
+
+                    <h2>Qualidade do pré-processamento</h2>
+
+                    <ul>
+                        <li class="fragment fade-in-then-semi-out">Mesmo com um equipamento de baixo custo, pode ser
+                            eficiente</li>
+                        <li class="fragment fade-in-then-semi-out">O tratamento de forma online com filtro IIR é
+                            suficiente para obtenção de algumas características</li>
+                        <li class="fragment fade-in-then-semi-out">O tratamento de forma offline apresenta ótimos
+                            resultados comparado com o sinal de referência</li>
+                    </ul>
+
+                </section>
+
+                <!-- <section>
+
+                    <h2>Trabalhos futuros</h2>
+
+                    <ul>
+                        <li class="fragment fade-in-then-semi-out">Obtenção das características</li>
+                        <li class="fragment fade-in-then-semi-out">Utilização de outros filtros para testes online</li>
+                        <li class="fragment fade-in-then-semi-out">Tratamento dos sinais INFRA-Vermelho e Vermelho</li>
+                        <li class="fragment fade-in-then-semi-out">Utilização de aprendizado de máquina para
+                            diagnósticos</li>
+                    </ul>
+
+                </section> -->
+
+            </section>
+
+            <section>
+
+                <h2>Demonstração</h2>
+
+            </section>
+
+        </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+        // More info about initialization & config:
+        // - https://revealjs.com/initialization/
+        // - https://revealjs.com/config/
+        Reveal.initialize({
+            hash: true,
+
+            // Learn about plugins: https://revealjs.com/plugins/
+            plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+        });
+    </script>
+</body>
+
 </html>
